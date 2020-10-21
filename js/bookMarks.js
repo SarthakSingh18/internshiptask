@@ -51,6 +51,9 @@ module.exports = {
                 if (err) {
                   reject(err);
                 } else {
+                  if(result.deletedCount==0){
+                    reject("Bookmark not found with id");
+                  }
                   console.log(result);
                   resolve("Deleted");
                 }

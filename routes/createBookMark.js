@@ -8,8 +8,13 @@ router.post("/", checkRequest.checkRequestBookMark, (req, res) => {
     .checkTag(req.body.tags)
     .then((result) => {
       console.log(result);
+      if(req.body.tags){
       res.locals.object["tags"].push(req.body.tags);
       return bookMark.createBookMark(res.locals.object);
+      }
+      else{
+      return bookMark.createBookMark(res.locals.object);
+      }
     })
     .catch((error) => {
       return Promise.reject(error);

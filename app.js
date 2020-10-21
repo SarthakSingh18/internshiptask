@@ -1,4 +1,3 @@
-const bodyParser = require("body-parser");
 const express=require("express");
 const app=express();
 app.use(express.json());
@@ -9,7 +8,7 @@ const createTag=require("./routes/createTag");
 const deleteTag=require("./routes/deleteTag");
 const updateBookMark=require("./routes/addTagToBookmark");
 const removeTagFromBookMark=require("./routes/removeTagFromBookmark");
-const getAllBookmark=require("./routes/retreiveAllBookMark");
+const getAllBookmark=require("./routes/getAllBookMarks");
 const getAllTags=require("./routes/getAllTags");
 app.use("/createbookmark",createBookMark);
 app.use("/deletebookmark",deletebookmark);

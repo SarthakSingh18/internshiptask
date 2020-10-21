@@ -3,7 +3,7 @@ const mongo = require("mongodb").MongoClient;
 module.exports = {
   checkTag: function (tagName) {
     return new Promise((resolve, reject) => {
-      mongo.connect("mongodb://localhost:27017", (err, client) => {
+      mongo.connect("mongodb://localhost:27017",{useNewUrlParser:true,useUnifiedTopology:true},  (err, client) => {
         if (err) {
           reject(err);
         } else {
